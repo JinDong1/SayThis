@@ -5,7 +5,7 @@ spring:
     name: quartz
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://120.25.216.249:3306/quartz?characterEncoding=utf-8&userUnicode=true&serverTimezone=Asia/Shanghai&useSSL=false
+    url: jdbc:mysql://120.25.216.249:3306/schedule?characterEncoding=utf-8&userUnicode=true&serverTimezone=Asia/Shanghai&useSSL=false
     username: root
     password: jindong007
     max-active: 20
@@ -28,7 +28,12 @@ spring:
     multipart:
       max-file-size: 1MB
       max-request-size: 10MB
-#配置mybatisplus
+  #扩展插件配置
+  super:
+    scheduled:
+      plug-in:
+        executionFlag:true
+  #配置mybatisplus
 mybatis-plus:
   mapper-locations: classpath*:mapper/**/*.xml
   global-config:
