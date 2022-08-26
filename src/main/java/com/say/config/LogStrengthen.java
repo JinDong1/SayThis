@@ -6,6 +6,8 @@ import com.ojd.tsl.common.utils.proxy.Point;
 import com.ojd.tsl.core.RunnableInterceptor.strengthen.BaseStrengthen;
 import com.ojd.tsl.model.ScheduledRunningContext;
 import com.say.domain.ScheduledLog;
+import com.say.mapper.ScheduledLogMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
@@ -15,6 +17,9 @@ import java.util.Date;
 @Component("logStrengthen2")
 public class LogStrengthen implements BaseStrengthen {
     private ScheduledLog scheduledLog;
+
+    @Autowired
+    private ScheduledLogMapper scheduledLogMapper;
 
     private String logPath;
 
@@ -37,7 +42,6 @@ public class LogStrengthen implements BaseStrengthen {
     public void before(Object bean, Method method, Object[] args, ScheduledRunningContext context) {
         Point point = (Point) bean;
         scheduledLog = new ScheduledLog();
-//        scheduledLog.setScheduledSource(point.getScheduledSource());
         scheduledLog.setStatrDate(new Date());
         scheduledLog.setScheduledName(point.getSuperScheduledName());
     }
@@ -55,7 +59,6 @@ public class LogStrengthen implements BaseStrengthen {
         scheduledLog.setEndDate(new Date());
         scheduledLog.setIsSuccess(Boolean.TRUE);
         scheduledLog.computingTime();
-//        SerializableUtils.toIncFile(scheduledLog, logPath, scheduledLog.getFileName());
     }
 
     /**
@@ -85,9 +88,7 @@ public class LogStrengthen implements BaseStrengthen {
         scheduledLog.setEndDate(new Date());
         scheduledLog.computingTime();
         if (scheduledLog.getIsSuccess() != null && !scheduledLog.getIsSuccess()) {
-
-            System.out.println("异常信息==== scheduledLog:" + scheduledLog);
-//            SerializableUtils.toIncFile(scheduledLog, logPath, scheduledLog.getFileName());
+            scheduledLogMapper.insert(scheduledLog);
         }
     }
 }
