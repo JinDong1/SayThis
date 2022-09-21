@@ -11,7 +11,7 @@ public class PageCondition<T> {
     private Integer current = 1;
 
     /**
-     * 当前月
+     * 当前页显示条数
      */
     private Integer size = 10;
 
