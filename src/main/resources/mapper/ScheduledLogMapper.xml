@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.say.mapper.ScheduledLogMapper">
+
+    <resultMap id="BaseResultMap" type="com.say.domain.ScheduledLog">
+        <id property="scheduledLogId" column="scheduled_log_id" jdbcType="INTEGER"/>
+        <result property="scheduledName" column="scheduled_name" jdbcType="VARCHAR"/>
+        <result property="statrDate" column="statr_date" jdbcType="TIMESTAMP"/>
+        <result property="endDate" column="end_date" jdbcType="TIMESTAMP"/>
+        <result property="exception" column="exception" jdbcType="VARCHAR"/>
+        <result property="executionTime" column="execution_time" jdbcType="TIMESTAMP"/>
+        <result property="isSuccess" column="is_success" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        scheduled_log_id
+        ,scheduled_name,statr_date,
+        end_date,exception,execution_time,
+        is_success
+    </sql>
+</mapper>
