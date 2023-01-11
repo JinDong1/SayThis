@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="generator.mapper.IrsMapper">
+
+    <resultMap id="BaseResultMap" type="generator.domain.Irs">
+            <id property="id" column="ID" jdbcType="BIGINT"/>
+            <result property="cntrprtyS" column="CNTRPRTY_S" jdbcType="VARCHAR"/>
+            <result property="fullNet" column="FULL_NET" jdbcType="VARCHAR"/>
+            <result property="mktVal" column="MKT_VAL" jdbcType="VARCHAR"/>
+            <result property="dv01S" column="DV01_S" jdbcType="VARCHAR"/>
+            <result property="receiveS" column="RECEIVE_S" jdbcType="VARCHAR"/>
+            <result property="payNotiS" column="PAY_NOTI_S" jdbcType="VARCHAR"/>
+            <result property="payReceS" column="PAY_RECE_S" jdbcType="VARCHAR"/>
+            <result property="rcvNotAmtS" column="RCV_NOT_AMT_S" jdbcType="VARCHAR"/>
+            <result property="payNotS" column="PAY_NOT_S" jdbcType="VARCHAR"/>
+            <result property="payCcyS" column="PAY_CCY_S" jdbcType="VARCHAR"/>
+            <result property="rcvCcyS" column="RCV_CCY_S" jdbcType="VARCHAR"/>
+            <result property="rcvCpS" column="RCV_CP_S" jdbcType="VARCHAR"/>
+            <result property="rcvAiS" column="RCV_AI_S" jdbcType="VARCHAR"/>
+            <result property="rcvInxS" column="RCV_INX_S" jdbcType="VARCHAR"/>
+            <result property="payInxS" column="PAY_INX_S" jdbcType="VARCHAR"/>
+            <result property="payAccS" column="PAY_ACC_S" jdbcType="VARCHAR"/>
+            <result property="paySpreS" column="PAY_SPRE_S" jdbcType="VARCHAR"/>
+            <result property="rateAtS" column="RATE_AT_S" jdbcType="VARCHAR"/>
+            <result property="netAccS" column="NET_ACC_S" jdbcType="VARCHAR"/>
+            <result property="oneDAccMS" column="ONE_D_ACC_M_S" jdbcType="VARCHAR"/>
+            <result property="midModS" column="MID_MOD_S" jdbcType="VARCHAR"/>
+            <result property="dPnl" column="D_PNL" jdbcType="VARCHAR"/>
+            <result property="dayRealiz" column="DAY_REALIZ" jdbcType="VARCHAR"/>
+            <result property="hIYtdUnrealPLS" column="H_I_YTD_UNREAL_P_L_S" jdbcType="VARCHAR"/>
+            <result property="hIYtdRealiPLS" column="H_I_YTD_REALI_P_L_S" jdbcType="VARCHAR"/>
+            <result property="hIYtdTotalPL" column="H_I_YTD_TOTAL_P_L" jdbcType="VARCHAR"/>
+            <result property="yestEodSwMvS" column="YEST_EOD_SW_MV_S" jdbcType="VARCHAR"/>
+            <result property="couponOS" column="COUPON_O_S" jdbcType="VARCHAR"/>
+            <result property="payCpnS" column="PAY_CPN_S" jdbcType="VARCHAR"/>
+            <result property="swapTypS" column="SWAP_TYP_S" jdbcType="VARCHAR"/>
+            <result property="payNextS" column="PAY_NEXT_S" jdbcType="VARCHAR"/>
+            <result property="payFreqS" column="PAY_FREQ_S" jdbcType="VARCHAR"/>
+            <result property="effDtS" column="EFF_DT_S" jdbcType="VARCHAR"/>
+            <result property="maturityS" column="MATURITY_S" jdbcType="VARCHAR"/>
+            <result property="originalS" column="ORIGINAL_S" jdbcType="VARCHAR"/>
+            <result property="bbidS" column="BBID_S" jdbcType="VARCHAR"/>
+            <result property="swapParCouponS" column="SWAP_PAR_COUPON_S" jdbcType="VARCHAR"/>
+            <result property="trader" column="TRADER" jdbcType="VARCHAR"/>
+            <result property="createTime" column="CREATE_TIME" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID,CNTRPRTY_S,FULL_NET,
+        MKT_VAL,DV01_S,RECEIVE_S,
+        PAY_NOTI_S,PAY_RECE_S,RCV_NOT_AMT_S,
+        PAY_NOT_S,PAY_CCY_S,RCV_CCY_S,
+        RCV_CP_S,RCV_AI_S,RCV_INX_S,
+        PAY_INX_S,PAY_ACC_S,PAY_SPRE_S,
+        RATE_AT_S,NET_ACC_S,ONE_D_ACC_M_S,
+        MID_MOD_S,D_PNL,DAY_REALIZ,
+        H_I_YTD_UNREAL_P_L_S,H_I_YTD_REALI_P_L_S,H_I_YTD_TOTAL_P_L,
+        YEST_EOD_SW_MV_S,COUPON_O_S,PAY_CPN_S,
+        SWAP_TYP_S,PAY_NEXT_S,PAY_FREQ_S,
+        EFF_DT_S,MATURITY_S,ORIGINAL_S,
+        BBID_S,SWAP_PAR_COUPON_S,TRADER,
+        CREATE_TIME
+    </sql>
+</mapper>

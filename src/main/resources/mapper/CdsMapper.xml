@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="generator.mapper.CdsMapper">
+
+    <resultMap id="BaseResultMap" type="generator.domain.Cds">
+            <id property="id" column="ID" jdbcType="BIGINT"/>
+            <result property="security" column="SECURITY" jdbcType="VARCHAR"/>
+            <result property="issuerS" column="ISSUER_S" jdbcType="VARCHAR"/>
+            <result property="fullNet" column="FULL_NET" jdbcType="VARCHAR"/>
+            <result property="dailyPl" column="DAILY_PL" jdbcType="VARCHAR"/>
+            <result property="dRealiz" column="D_REALIZ" jdbcType="VARCHAR"/>
+            <result property="dUnreal" column="D_UNREAL" jdbcType="VARCHAR"/>
+            <result property="hiYtdRealizedS" column="HI_YTD_REALIZED_S" jdbcType="VARCHAR"/>
+            <result property="hiYtdUnrealizedS" column="HI_YTD_UNREALIZED_S" jdbcType="VARCHAR"/>
+            <result property="hiYtd" column="HI_YTD" jdbcType="VARCHAR"/>
+            <result property="dv01S" column="DV01_S" jdbcType="VARCHAR"/>
+            <result property="costSpreadS" column="COST_SPREAD_S" jdbcType="VARCHAR"/>
+            <result property="mvRt" column="MV_RT" jdbcType="VARCHAR"/>
+            <result property="mvT1S" column="MV_T_1_S" jdbcType="VARCHAR"/>
+            <result property="sprdT" column="SPRD_T" jdbcType="VARCHAR"/>
+            <result property="sprdT1S" column="SPRD_T_1_S" jdbcType="VARCHAR"/>
+            <result property="seriesS" column="SERIES_S" jdbcType="VARCHAR"/>
+            <result property="cdsBuyS" column="CDS_BUY_S" jdbcType="VARCHAR"/>
+            <result property="cntrprtyS" column="CNTRPRTY_S" jdbcType="VARCHAR"/>
+            <result property="maturityS" column="MATURITY_S" jdbcType="VARCHAR"/>
+            <result property="cdsQtdS" column="CDS_QTD_S" jdbcType="VARCHAR"/>
+            <result property="cdsCashS" column="CDS_CASH_S" jdbcType="VARCHAR"/>
+            <result property="rrRate" column="RR_RATE" jdbcType="VARCHAR"/>
+            <result property="pvCdsPremLegS" column="PV_CDS_PREM_LEG_S" jdbcType="VARCHAR"/>
+            <result property="pvCdsDfltLegS" column="PV_CDS_DFLT_LEG_S" jdbcType="VARCHAR"/>
+            <result property="netAccIntS" column="NET_ACC_INT_S" jdbcType="VARCHAR"/>
+            <result property="daysAccS" column="DAYS_ACC_S" jdbcType="VARCHAR"/>
+            <result property="payNextPaymentDatS" column="PAY_NEXT_PAYMENT_DAT_S" jdbcType="VARCHAR"/>
+            <result property="swTrdDtS" column="SW_TRD_DT_S" jdbcType="VARCHAR"/>
+            <result property="trader" column="TRADER" jdbcType="VARCHAR"/>
+            <result property="createTime" column="CREATE_TIME" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID,SECURITY,ISSUER_S,
+        FULL_NET,DAILY_PL,D_REALIZ,
+        D_UNREAL,HI_YTD_REALIZED_S,HI_YTD_UNREALIZED_S,
+        HI_YTD,DV01_S,COST_SPREAD_S,
+        MV_RT,MV_T_1_S,SPRD_T,
+        SPRD_T_1_S,SERIES_S,CDS_BUY_S,
+        CNTRPRTY_S,MATURITY_S,CDS_QTD_S,
+        CDS_CASH_S,RR_RATE,PV_CDS_PREM_LEG_S,
+        PV_CDS_DFLT_LEG_S,NET_ACC_INT_S,DAYS_ACC_S,
+        PAY_NEXT_PAYMENT_DAT_S,SW_TRD_DT_S,TRADER,
+        CREATE_TIME
+    </sql>
+</mapper>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="generator.mapper.TrsMapper">
+
+    <resultMap id="BaseResultMap" type="generator.domain.Trs">
+            <id property="id" column="ID" jdbcType="BIGINT"/>
+            <result property="security" column="SECURITY" jdbcType="VARCHAR"/>
+            <result property="fullNet" column="FULL_NET" jdbcType="VARCHAR"/>
+            <result property="bbIdS" column="BB_ID_S_" jdbcType="VARCHAR"/>
+            <result property="secTypeS" column="SEC_TYPE_S_" jdbcType="VARCHAR"/>
+            <result property="posStratTag1" column="POS_STRAT_TAG_1" jdbcType="VARCHAR"/>
+            <result property="dv01" column="DV01" jdbcType="VARCHAR"/>
+            <result property="midModDurS" column="MID_MOD_DUR_S_" jdbcType="VARCHAR"/>
+            <result property="mtmXTradeDateNetS" column="MTM_X_TRADE_DATE_NET_S" jdbcType="VARCHAR"/>
+            <result property="markToMktPx" column="MARK_TO_MKT_PX" jdbcType="VARCHAR"/>
+            <result property="securityIncomeS" column="SECURITY_INCOME_S" jdbcType="VARCHAR"/>
+            <result property="hIYtdTradePLS" column="H_I_YTD_TRADE_P_L_S" jdbcType="VARCHAR"/>
+            <result property="hIYtdMarketPLS" column="H_I_YTD_MARKET_P_L_S" jdbcType="VARCHAR"/>
+            <result property="hIYtdTotalPL" column="H_I_YTD_TOTAL_P_L" jdbcType="VARCHAR"/>
+            <result property="realiz" column="REALIZ" jdbcType="VARCHAR"/>
+            <result property="unrealiz" column="UNREALIZ" jdbcType="VARCHAR"/>
+            <result property="total" column="TOTAL" jdbcType="VARCHAR"/>
+            <result property="isin" column="ISIN" jdbcType="VARCHAR"/>
+            <result property="curncyS" column="CURNCY_S_" jdbcType="VARCHAR"/>
+            <result property="cumulativeAverageC" column="CUMULATIVE_AVERAGE_C" jdbcType="VARCHAR"/>
+            <result property="yestMtmPxS" column="YEST_MTM_PX_S_" jdbcType="VARCHAR"/>
+            <result property="bidPx" column="BID_PX" jdbcType="VARCHAR"/>
+            <result property="exchRtS" column="EXCH_RT_S_" jdbcType="VARCHAR"/>
+            <result property="dateFirstAcquiredS" column="DATE_FIRST_ACQUIRED_S" jdbcType="VARCHAR"/>
+            <result property="ytdSecurityIncomeS" column="YTD_SECURITY_INCOME_S" jdbcType="VARCHAR"/>
+            <result property="pricingMethod" column="PRICING_METHOD" jdbcType="VARCHAR"/>
+            <result property="cntrprtyS" column="CNTRPRTY_S" jdbcType="VARCHAR"/>
+            <result property="payFloatingRateInS" column="PAY_FLOATING_RATE_IN_S" jdbcType="VARCHAR"/>
+            <result property="paySpreadS" column="PAY_SPREAD_S" jdbcType="VARCHAR"/>
+            <result property="payAccIntS" column="PAY_ACC_INT_S" jdbcType="VARCHAR"/>
+            <result property="accIntPdS" column="ACC_INT_PD_S" jdbcType="VARCHAR"/>
+            <result property="createTime" column="CREATE_TIME" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID,SECURITY,FULL_NET,
+        BB_ID_S_,SEC_TYPE_S_,POS_STRAT_TAG_1,
+        DV01,MID_MOD_DUR_S_,MTM_X_TRADE_DATE_NET_S,
+        MARK_TO_MKT_PX,SECURITY_INCOME_S,H_I_YTD_TRADE_P_L_S,
+        H_I_YTD_MARKET_P_L_S,H_I_YTD_TOTAL_P_L,REALIZ,
+        UNREALIZ,TOTAL,ISIN,
+        CURNCY_S_,CUMULATIVE_AVERAGE_C,YEST_MTM_PX_S_,
+        BID_PX,EXCH_RT_S_,DATE_FIRST_ACQUIRED_S,
+        YTD_SECURITY_INCOME_S,PRICING_METHOD,CNTRPRTY_S,
+        PAY_FLOATING_RATE_IN_S,PAY_SPREAD_S,PAY_ACC_INT_S,
+        ACC_INT_PD_S,CREATE_TIME
+    </sql>
+</mapper>

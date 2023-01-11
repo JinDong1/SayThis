@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="generator.mapper.AmtMapper">
+
+    <resultMap id="BaseResultMap" type="generator.domain.Amt">
+            <id property="id" column="ID" jdbcType="BIGINT"/>
+            <result property="security" column="SECURITY" jdbcType="VARCHAR"/>
+            <result property="isin" column="ISIN" jdbcType="VARCHAR"/>
+            <result property="positionUsd" column="POSITION_USD" jdbcType="VARCHAR"/>
+            <result property="pos" column="POS" jdbcType="VARCHAR"/>
+            <result property="dateFirS" column="DATE_FIR_S" jdbcType="VARCHAR"/>
+            <result property="curncyS" column="CURNCY_S" jdbcType="VARCHAR"/>
+            <result property="method" column="METHOD" jdbcType="VARCHAR"/>
+            <result property="bgnBidS" column="BGN_BID_S" jdbcType="VARCHAR"/>
+            <result property="cost" column="COST" jdbcType="VARCHAR"/>
+            <result property="costYldS" column="COST_YLD_S" jdbcType="VARCHAR"/>
+            <result property="bookPriS" column="BOOK_PRI_S" jdbcType="VARCHAR"/>
+            <result property="bidPx" column="BID_PX" jdbcType="VARCHAR"/>
+            <result property="mtmPc" column="MTM_PC" jdbcType="VARCHAR"/>
+            <result property="mtm" column="MTM" jdbcType="VARCHAR"/>
+            <result property="bvalMid" column="BVAL_MID" jdbcType="VARCHAR"/>
+            <result property="cumPrinS" column="CUM_PRIN_S" jdbcType="VARCHAR"/>
+            <result property="pxAccPS" column="PX_ACC_P_S" jdbcType="VARCHAR"/>
+            <result property="priceAcS" column="PRICE_AC_S" jdbcType="VARCHAR"/>
+            <result property="dayCpnS" column="DAY_CPN_S" jdbcType="VARCHAR"/>
+            <result property="mtdCpnS" column="MTD_CPN_S" jdbcType="VARCHAR"/>
+            <result property="ytdCpnS" column="YTD_CPN_S" jdbcType="VARCHAR"/>
+            <result property="amortiza" column="AMORTIZA" jdbcType="VARCHAR"/>
+            <result property="opnAvgS" column="OPN_AVG_S" jdbcType="VARCHAR"/>
+            <result property="maturityS" column="MATURITY_S" jdbcType="VARCHAR"/>
+            <result property="nxtCallS" column="NXT_CALL_S" jdbcType="VARCHAR"/>
+            <result property="pL" column="P_L" jdbcType="VARCHAR"/>
+            <result property="hiMtdS" column="HI_MTD_S" jdbcType="VARCHAR"/>
+            <result property="unrealiz" column="UNREALIZ" jdbcType="VARCHAR"/>
+            <result property="mtdTradS" column="MTD_TRAD_S" jdbcType="VARCHAR"/>
+            <result property="ytdTradS" column="YTD_TRAD_S" jdbcType="VARCHAR"/>
+            <result property="ytdtotal" column="YTDTOTAL" jdbcType="VARCHAR"/>
+            <result property="ytdReal" column="YTD_REAL" jdbcType="VARCHAR"/>
+            <result property="ytdUnrl" column="YTD_UNRL" jdbcType="VARCHAR"/>
+            <result property="ociPnlUsd" column="OCI_PNL_USD" jdbcType="VARCHAR"/>
+            <result property="yldFlag" column="YLD_FLAG" jdbcType="VARCHAR"/>
+            <result property="bidYtmS" column="BID_YTM_S" jdbcType="VARCHAR"/>
+            <result property="indGrouS" column="IND_GROU_S" jdbcType="VARCHAR"/>
+            <result property="bbCompoS" column="BB_COMPO_S" jdbcType="VARCHAR"/>
+            <result property="fitchIsS" column="FITCH_IS_S" jdbcType="VARCHAR"/>
+            <result property="moodyIsS" column="MOODY_IS_S" jdbcType="VARCHAR"/>
+            <result property="sPIsS" column="S_P_IS_S" jdbcType="VARCHAR"/>
+            <result property="fitchS" column="FITCH_S" jdbcType="VARCHAR"/>
+            <result property="moodySS" column="MOODY_S_S" jdbcType="VARCHAR"/>
+            <result property="sPS" column="S_P_S" jdbcType="VARCHAR"/>
+            <result property="netMarkS" column="NET_MARK_S" jdbcType="VARCHAR"/>
+            <result property="midMacS" column="MID_MAC_S" jdbcType="VARCHAR"/>
+            <result property="dv01" column="DV01" jdbcType="VARCHAR"/>
+            <result property="yrsMatS" column="YRS_MAT_S" jdbcType="VARCHAR"/>
+            <result property="isCallS" column="IS_CALL_S" jdbcType="VARCHAR"/>
+            <result property="isPutS" column="IS_PUT_S" jdbcType="VARCHAR"/>
+            <result property="prevCpnS" column="PREV_CPN_S" jdbcType="VARCHAR"/>
+            <result property="nxtCpnS" column="NXT_CPN_S" jdbcType="VARCHAR"/>
+            <result property="cntryOfS" column="CNTRY_OF_S" jdbcType="VARCHAR"/>
+            <result property="cpnRateS" column="CPN_RATE_S" jdbcType="VARCHAR"/>
+            <result property="issuerS" column="ISSUER_S" jdbcType="VARCHAR"/>
+            <result property="amtOutS" column="AMT_OUT_S" jdbcType="VARCHAR"/>
+            <result property="dirtyBiS" column="DIRTY_BI_S" jdbcType="VARCHAR"/>
+            <result property="igHyS" column="IG_HY_S" jdbcType="VARCHAR"/>
+            <result property="yestMtmS" column="YEST_MTM_S" jdbcType="VARCHAR"/>
+            <result property="mtmXTrSUsd" column="MTM_X_TR_S_USD" jdbcType="VARCHAR"/>
+            <result property="midMacaS" column="MID_MACA_S" jdbcType="VARCHAR"/>
+            <result property="daypnl" column="DAYPNL" jdbcType="VARCHAR"/>
+            <result property="ydunrl" column="YDUNRL" jdbcType="VARCHAR"/>
+            <result property="ydrealS" column="YDREAL_S" jdbcType="VARCHAR"/>
+            <result property="hiYtdS" column="HI_YTD_S" jdbcType="VARCHAR"/>
+            <result property="principaS" column="PRINCIPA_S" jdbcType="VARCHAR"/>
+            <result property="accIntPdS" column="ACC_INT_PD_S" jdbcType="VARCHAR"/>
+            <result property="trader" column="TRADER" jdbcType="VARCHAR"/>
+            <result property="createTime" column="CREATE_TIME" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID,SECURITY,ISIN,
+        POSITION_USD,POS,DATE_FIR_S,
+        CURNCY_S,METHOD,BGN_BID_S,
+        COST,COST_YLD_S,BOOK_PRI_S,
+        BID_PX,MTM_PC,MTM,
+        BVAL_MID,CUM_PRIN_S,PX_ACC_P_S,
+        PRICE_AC_S,DAY_CPN_S,MTD_CPN_S,
+        YTD_CPN_S,AMORTIZA,OPN_AVG_S,
+        MATURITY_S,NXT_CALL_S,P_L,
+        HI_MTD_S,UNREALIZ,MTD_TRAD_S,
+        YTD_TRAD_S,YTDTOTAL,YTD_REAL,
+        YTD_UNRL,OCI_PNL_USD,YLD_FLAG,
+        BID_YTM_S,IND_GROU_S,BB_COMPO_S,
+        FITCH_IS_S,MOODY_IS_S,S_P_IS_S,
+        FITCH_S,MOODY_S_S,S_P_S,
+        NET_MARK_S,MID_MAC_S,DV01,
+        YRS_MAT_S,IS_CALL_S,IS_PUT_S,
+        PREV_CPN_S,NXT_CPN_S,CNTRY_OF_S,
+        CPN_RATE_S,ISSUER_S,AMT_OUT_S,
+        DIRTY_BI_S,IG_HY_S,YEST_MTM_S,
+        MTM_X_TR_S_USD,MID_MACA_S,DAYPNL,
+        YDUNRL,YDREAL_S,HI_YTD_S,
+        PRINCIPA_S,ACC_INT_PD_S,TRADER,
+        CREATE_TIME
+    </sql>
+</mapper>

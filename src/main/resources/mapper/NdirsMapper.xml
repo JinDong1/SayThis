@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="generator.mapper.NdirsMapper">
+
+    <resultMap id="BaseResultMap" type="generator.domain.Ndirs">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="security" column="SECURITY" jdbcType="VARCHAR"/>
+            <result property="cntrprtyS" column="CNTRPRTY_S" jdbcType="VARCHAR"/>
+            <result property="fullNet" column="FULL_NET" jdbcType="VARCHAR"/>
+            <result property="mktValCny" column="MKT_VAL_CNY" jdbcType="VARCHAR"/>
+            <result property="yestEodSwMvSCny" column="YEST_EOD_SW_MV_S_CNY" jdbcType="VARCHAR"/>
+            <result property="dPnlCny" column="D_PNL_CNY" jdbcType="VARCHAR"/>
+            <result property="unrealizCny" column="UNREALIZ_CNY" jdbcType="VARCHAR"/>
+            <result property="hIYtdTradePLSCny" column="H_I_YTD_TRADE_P_L_S_CNY" jdbcType="VARCHAR"/>
+            <result property="hIYtdMarketPLSCny" column="H_I_YTD_MARKET_P_L_S_CNY" jdbcType="VARCHAR"/>
+            <result property="ytdPnlCny" column="YTD_PNL_CNY" jdbcType="VARCHAR"/>
+            <result property="dv01SCny" column="DV01_S_CNY" jdbcType="VARCHAR"/>
+            <result property="payCpnS" column="PAY_CPN_S" jdbcType="VARCHAR"/>
+            <result property="payReceS" column="PAY_RECE_S" jdbcType="VARCHAR"/>
+            <result property="payNotiS" column="PAY_NOTI_S" jdbcType="VARCHAR"/>
+            <result property="payNotS" column="PAY_NOT_S" jdbcType="VARCHAR"/>
+            <result property="receiveS" column="RECEIVE_S" jdbcType="VARCHAR"/>
+            <result property="rcvNotS" column="RCV_NOT_S" jdbcType="VARCHAR"/>
+            <result property="payCcyS" column="PAY_CCY_S" jdbcType="VARCHAR"/>
+            <result property="rcvCcyS" column="RCV_CCY_S" jdbcType="VARCHAR"/>
+            <result property="rcvCpS" column="RCV_CP_S" jdbcType="VARCHAR"/>
+            <result property="rcvInxS" column="RCV_INX_S" jdbcType="VARCHAR"/>
+            <result property="midModS" column="MID_MOD_S" jdbcType="VARCHAR"/>
+            <result property="swapTypS" column="SWAP_TYP_S" jdbcType="VARCHAR"/>
+            <result property="payNextS" column="PAY_NEXT_S" jdbcType="VARCHAR"/>
+            <result property="payFreqS" column="PAY_FREQ_S" jdbcType="VARCHAR"/>
+            <result property="effDtS" column="EFF_DT_S" jdbcType="VARCHAR"/>
+            <result property="maturityS" column="MATURITY_S" jdbcType="VARCHAR"/>
+            <result property="originalS" column="ORIGINAL_S" jdbcType="VARCHAR"/>
+            <result property="bbidS" column="BBID_S" jdbcType="VARCHAR"/>
+            <result property="realizCny" column="REALIZ_CNY" jdbcType="VARCHAR"/>
+            <result property="ytdTradeProfitAndS" column="YTD_TRADE_PROFIT_AND_S" jdbcType="VARCHAR"/>
+            <result property="ytdMarketProfitAnS" column="YTD_MARKET_PROFIT_AN_S" jdbcType="VARCHAR"/>
+            <result property="ytdTotPL" column="YTD_TOT_P_L" jdbcType="VARCHAR"/>
+            <result property="swapParCouponS" column="SWAP_PAR_COUPON_S" jdbcType="VARCHAR"/>
+            <result property="createTime" column="CREATE_TIME" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,SECURITY,CNTRPRTY_S,
+        FULL_NET,MKT_VAL_CNY,YEST_EOD_SW_MV_S_CNY,
+        D_PNL_CNY,UNREALIZ_CNY,H_I_YTD_TRADE_P_L_S_CNY,
+        H_I_YTD_MARKET_P_L_S_CNY,YTD_PNL_CNY,DV01_S_CNY,
+        PAY_CPN_S,PAY_RECE_S,PAY_NOTI_S,
+        PAY_NOT_S,RECEIVE_S,RCV_NOT_S,
+        PAY_CCY_S,RCV_CCY_S,RCV_CP_S,
+        RCV_INX_S,MID_MOD_S,SWAP_TYP_S,
+        PAY_NEXT_S,PAY_FREQ_S,EFF_DT_S,
+        MATURITY_S,ORIGINAL_S,BBID_S,
+        REALIZ_CNY,YTD_TRADE_PROFIT_AND_S,YTD_MARKET_PROFIT_AN_S,
+        YTD_TOT_P_L,SWAP_PAR_COUPON_S,CREATE_TIME
+    </sql>
+</mapper>

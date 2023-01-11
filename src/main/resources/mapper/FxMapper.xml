@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="generator.mapper.FxMapper">
+
+    <resultMap id="BaseResultMap" type="generator.domain.Fx">
+            <id property="id" column="ID" jdbcType="BIGINT"/>
+            <result property="security" column="SECURITY" jdbcType="VARCHAR"/>
+            <result property="astTyp" column="AST_TYP" jdbcType="VARCHAR"/>
+            <result property="ccyPair" column="CCY_PAIR" jdbcType="VARCHAR"/>
+            <result property="tenorBc" column="TENOR_BC" jdbcType="VARCHAR"/>
+            <result property="ccy1Net" column="CCY1_NET" jdbcType="VARCHAR"/>
+            <result property="ccy2Net" column="CCY2_NET" jdbcType="VARCHAR"/>
+            <result property="cost" column="COST" jdbcType="VARCHAR"/>
+            <result property="mtm" column="MTM" jdbcType="VARCHAR"/>
+            <result property="avgcost" column="AVGCOST" jdbcType="VARCHAR"/>
+            <result property="ccy101" column="CCY1_01" jdbcType="VARCHAR"/>
+            <result property="ccy201" column="CCY2_01" jdbcType="VARCHAR"/>
+            <result property="dTotalpl" column="D_TOTALPL" jdbcType="VARCHAR"/>
+            <result property="dRealiz" column="D_REALIZ" jdbcType="VARCHAR"/>
+            <result property="dUnrealiz" column="D_UNREALIZ" jdbcType="VARCHAR"/>
+            <result property="isSecMaturedDeletS" column="IS_SEC_MATURED_DELET_S" jdbcType="VARCHAR"/>
+            <result property="pricingMethod" column="PRICING_METHOD" jdbcType="VARCHAR"/>
+            <result property="pxSource" column="PX_SOURCE" jdbcType="VARCHAR"/>
+            <result property="bidPx" column="BID_PX" jdbcType="VARCHAR"/>
+            <result property="midPx" column="MID_PX" jdbcType="VARCHAR"/>
+            <result property="askPx" column="ASK_PX" jdbcType="VARCHAR"/>
+            <result property="fxYtdRlz" column="FX_YTD_RLZ" jdbcType="VARCHAR"/>
+            <result property="fxYtdTotalPl" column="FX_YTD_TOTAL_PL" jdbcType="VARCHAR"/>
+            <result property="fxTotalUndiscount" column="FX_TOTAL_UNDISCOUNT" jdbcType="VARCHAR"/>
+            <result property="ytdUrlz" column="YTD_URLZ" jdbcType="VARCHAR"/>
+            <result property="ytdTotalPl14ChS" column="YTD_TOTAL_PL_14_CH_S" jdbcType="VARCHAR"/>
+            <result property="hiYtdTotalPl" column="HI_YTD_TOTAL_PL" jdbcType="VARCHAR"/>
+            <result property="hiYtdMarketPlS" column="HI_YTD_MARKET_PL_S" jdbcType="VARCHAR"/>
+            <result property="hiYtdTradePlS" column="HI_YTD_TRADE_PL_S" jdbcType="VARCHAR"/>
+            <result property="ccy1Npv" column="CCY1_NPV" jdbcType="VARCHAR"/>
+            <result property="ccy2Npv" column="CCY2_NPV" jdbcType="VARCHAR"/>
+            <result property="ccy1Del" column="CCY1_DEL" jdbcType="VARCHAR"/>
+            <result property="ccy2Dl" column="CCY_2_DL" jdbcType="VARCHAR"/>
+            <result property="ccy2Df" column="CCY2_DF" jdbcType="VARCHAR"/>
+            <result property="ccy1Df" column="CCY1_DF" jdbcType="VARCHAR"/>
+            <result property="ccy1Pl" column="CCY_1_PL" jdbcType="VARCHAR"/>
+            <result property="ccy2Pl" column="CCY_2_PL" jdbcType="VARCHAR"/>
+            <result property="trader" column="TRADER" jdbcType="VARCHAR"/>
+            <result property="createTime" column="CREATE_TIME" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID,SECURITY,AST_TYP,
+        CCY_PAIR,TENOR_BC,CCY1_NET,
+        CCY2_NET,COST,MTM,
+        AVGCOST,CCY1_01,CCY2_01,
+        D_TOTALPL,D_REALIZ,D_UNREALIZ,
+        IS_SEC_MATURED_DELET_S,PRICING_METHOD,PX_SOURCE,
+        BID_PX,MID_PX,ASK_PX,
+        FX_YTD_RLZ,FX_YTD_TOTAL_PL,FX_TOTAL_UNDISCOUNT,
+        YTD_URLZ,YTD_TOTAL_PL_14_CH_S,HI_YTD_TOTAL_PL,
+        HI_YTD_MARKET_PL_S,HI_YTD_TRADE_PL_S,CCY1_NPV,
+        CCY2_NPV,CCY1_DEL,CCY_2_DL,
+        CCY2_DF,CCY1_DF,CCY_1_PL,
+        CCY_2_PL,TRADER,CREATE_TIME
+    </sql>
+</mapper>

@@ -6,18 +6,27 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class TestUtils {
 
 
+
+
+
+
     public static void main(String[] args) {
+
 
         //生成组数
         int NUMBER_GROUP = 5;
 
         //前
-        List<String> front = new ArrayList<>(new HashSet<>(Arrays.asList("08", "10", "23", "29",
-                "32", "08", "17", "21", "24", "28",
-                "01", "02", "03", "06", "32", "02",
-                "15", "18", "21", "24")));
+        List<String> front = new ArrayList<>(new HashSet<>(Arrays.asList(
+                "01","03","05","07","09",
+                "12","14","16","18",
+                "20","22","24","26",
+                "28","30","32","34",
+                "35"
+        )));
         //后
-        List<String> last = new ArrayList<>(new HashSet<>(Arrays.asList("04", "06", "10", "11", "12", "03")));
+        //List<String> last = new ArrayList<>(new HashSet<>(Arrays.asList("05","09")));
+        List<String> last = new ArrayList<>(new HashSet<>(Arrays.asList("01","03","07","08","11")));
 
         Map<LinkedHashSet<String>, LinkedHashSet<String>> map = new HashMap<>();
 
