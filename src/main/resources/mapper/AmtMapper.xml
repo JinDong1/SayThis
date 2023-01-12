@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="generator.mapper.AmtMapper">
+<mapper namespace="com.say.mapper.AmtMapper">
 
-    <resultMap id="BaseResultMap" type="generator.domain.Amt">
+    <resultMap id="BaseResultMap" type="com.say.domain.Amt">
             <id property="id" column="ID" jdbcType="BIGINT"/>
             <result property="security" column="SECURITY" jdbcType="VARCHAR"/>
             <result property="isin" column="ISIN" jdbcType="VARCHAR"/>
@@ -103,4 +103,15 @@
         PRINCIPA_S,ACC_INT_PD_S,TRADER,
         CREATE_TIME
     </sql>
+
+
+    <insert id="batchBave">
+        insert into amt(<include refid="Base_Column_List"/>) values
+        <foreach item="item" index="index" collection="list" separator=",">
+            (#{item.name},#{item.sex},#{item.age})
+        </foreach>
+
+    </insert>
+
+
 </mapper>

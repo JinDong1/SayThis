@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="generator.mapper.FxMapper">
+<mapper namespace="com.say.mapper.FxMapper">
 
-    <resultMap id="BaseResultMap" type="generator.domain.Fx">
+    <resultMap id="BaseResultMap" type="com.say.domain.Fx">
             <id property="id" column="ID" jdbcType="BIGINT"/>
             <result property="security" column="SECURITY" jdbcType="VARCHAR"/>
             <result property="astTyp" column="AST_TYP" jdbcType="VARCHAR"/>

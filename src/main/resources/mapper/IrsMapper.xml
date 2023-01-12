@@ -2,10 +2,11 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="generator.mapper.IrsMapper">
+<mapper namespace="com.say.mapper.IrsMapper">
 
-    <resultMap id="BaseResultMap" type="generator.domain.Irs">
+    <resultMap id="BaseResultMap" type="com.say.domain.Irs">
             <id property="id" column="ID" jdbcType="BIGINT"/>
+            <result property="security" column="SECURITY" jdbcType="VARCHAR"/>
             <result property="cntrprtyS" column="CNTRPRTY_S" jdbcType="VARCHAR"/>
             <result property="fullNet" column="FULL_NET" jdbcType="VARCHAR"/>
             <result property="mktVal" column="MKT_VAL" jdbcType="VARCHAR"/>
@@ -48,19 +49,19 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        ID,CNTRPRTY_S,FULL_NET,
-        MKT_VAL,DV01_S,RECEIVE_S,
-        PAY_NOTI_S,PAY_RECE_S,RCV_NOT_AMT_S,
-        PAY_NOT_S,PAY_CCY_S,RCV_CCY_S,
-        RCV_CP_S,RCV_AI_S,RCV_INX_S,
-        PAY_INX_S,PAY_ACC_S,PAY_SPRE_S,
-        RATE_AT_S,NET_ACC_S,ONE_D_ACC_M_S,
-        MID_MOD_S,D_PNL,DAY_REALIZ,
-        H_I_YTD_UNREAL_P_L_S,H_I_YTD_REALI_P_L_S,H_I_YTD_TOTAL_P_L,
-        YEST_EOD_SW_MV_S,COUPON_O_S,PAY_CPN_S,
-        SWAP_TYP_S,PAY_NEXT_S,PAY_FREQ_S,
-        EFF_DT_S,MATURITY_S,ORIGINAL_S,
-        BBID_S,SWAP_PAR_COUPON_S,TRADER,
-        CREATE_TIME
+        ID,SECURITY,CNTRPRTY_S,
+        FULL_NET,MKT_VAL,DV01_S,
+        RECEIVE_S,PAY_NOTI_S,PAY_RECE_S,
+        RCV_NOT_AMT_S,PAY_NOT_S,PAY_CCY_S,
+        RCV_CCY_S,RCV_CP_S,RCV_AI_S,
+        RCV_INX_S,PAY_INX_S,PAY_ACC_S,
+        PAY_SPRE_S,RATE_AT_S,NET_ACC_S,
+        ONE_D_ACC_M_S,MID_MOD_S,D_PNL,
+        DAY_REALIZ,H_I_YTD_UNREAL_P_L_S,H_I_YTD_REALI_P_L_S,
+        H_I_YTD_TOTAL_P_L,YEST_EOD_SW_MV_S,COUPON_O_S,
+        PAY_CPN_S,SWAP_TYP_S,PAY_NEXT_S,
+        PAY_FREQ_S,EFF_DT_S,MATURITY_S,
+        ORIGINAL_S,BBID_S,SWAP_PAR_COUPON_S,
+        TRADER,CREATE_TIME
     </sql>
 </mapper>

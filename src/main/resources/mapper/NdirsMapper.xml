@@ -2,10 +2,10 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="generator.mapper.NdirsMapper">
+<mapper namespace="com.say.mapper.NdirsMapper">
 
-    <resultMap id="BaseResultMap" type="generator.domain.Ndirs">
-            <id property="id" column="id" jdbcType="BIGINT"/>
+    <resultMap id="BaseResultMap" type="com.say.domain.Ndirs">
+            <id property="id" column="ID" jdbcType="BIGINT"/>
             <result property="security" column="SECURITY" jdbcType="VARCHAR"/>
             <result property="cntrprtyS" column="CNTRPRTY_S" jdbcType="VARCHAR"/>
             <result property="fullNet" column="FULL_NET" jdbcType="VARCHAR"/>
@@ -44,7 +44,7 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,SECURITY,CNTRPRTY_S,
+        ID,SECURITY,CNTRPRTY_S,
         FULL_NET,MKT_VAL_CNY,YEST_EOD_SW_MV_S_CNY,
         D_PNL_CNY,UNREALIZ_CNY,H_I_YTD_TRADE_P_L_S_CNY,
         H_I_YTD_MARKET_P_L_S_CNY,YTD_PNL_CNY,DV01_S_CNY,

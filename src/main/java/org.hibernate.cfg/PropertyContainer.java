@@ -28,6 +28,10 @@ import org.hibernate.internal.util.StringHelper;
 import org.hibernate.internal.util.collections.CollectionHelper;
 import org.jboss.logging.Logger;
 
+/**
+ * JPA 建表顺序一致性
+ */
+
 class PropertyContainer {
     private static final CoreMessageLogger LOG = (CoreMessageLogger)Logger.getMessageLogger(CoreMessageLogger.class, PropertyContainer.class.getName());
     private final XClass xClass;

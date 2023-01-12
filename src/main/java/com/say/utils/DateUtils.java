@@ -91,6 +91,9 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
         return DateFormatUtils.format(now, "yyyyMMdd");
     }
 
+
+
+
     /**
      * 日期型字符串转化为日期 格式
      */

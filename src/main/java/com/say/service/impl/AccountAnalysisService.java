@@ -72,13 +72,13 @@ public class AccountAnalysisService {
         return excelDataList;
     }
 
-    public void excelExport()  {
+    public void excelExport(HttpServletResponse response)  {
 
         List<ExcelData> excelData = exportAllData();
-        ByteArrayOutputStream os = ExcelUtils.exportZip("压缩导出", excelData);
+        ExcelUtils.exportZip("压缩导出", excelData,response);
 
         //发送邮箱
-        email(os.toByteArray());
+   //     email(os.toByteArray());
 
 
     }

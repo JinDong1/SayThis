@@ -27,7 +27,7 @@ public class AccountProcessing {
         FileParsingUtil.fileToMultipartFile().forEach((k, v)-> accountHandle.handleResult(k,v));
 
         //数据导出
-        accountAnalysisService.excelExport();
+        accountAnalysisService.excelExport(response);
 
 
 
