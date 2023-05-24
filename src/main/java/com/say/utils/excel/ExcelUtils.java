@@ -11,10 +11,12 @@ import com.alibaba.excel.metadata.data.WriteCellData;
 import com.alibaba.excel.metadata.property.ExcelContentProperty;
 import com.alibaba.excel.write.builder.ExcelWriterBuilder;
 import com.alibaba.excel.write.metadata.WriteSheet;
+import com.alibaba.excel.write.metadata.fill.FillConfig;
 import com.alibaba.excel.write.style.column.LongestMatchColumnWidthStyleStrategy;
 import com.say.utils.excel.model.ShellData;
 import com.say.utils.excel.strategy.ExcelFillCellLineMergeHandler;
 import com.say.utils.excel.strategy.MergeStrategy;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
@@ -24,16 +26,72 @@ import java.io.*;
 import java.math.BigDecimal;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 /**
  * Excel相关处理
  */
+@Log4j2
 public class ExcelUtils {
+
+    /**
+     * 设置web响应输出的文件名称
+     * @param response web响应
+     * @param fileName 导出文件名称
+     */
+    private static void setResponseHeader(HttpServletResponse response, String fileName) {
+        response.reset();
+        response.setContentType("application/vnd.ms-excel;charset=utf-8");
+        try {
+            response.setHeader("Content-Disposition", "attachment;filename=" +
+                    URLEncoder.encode(fileName + ".xlsx", "UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            log.error("不支持的编码", e.getLocalizedMessage());
+        }
+        response.setCharacterEncoding("UTF-8");
+    }
+
+    public static void exportStudedntExcel(HttpServletResponse response, HashMap<String,Object> datas,String fileName) throws IOException{
+
+
+        setResponseHeader(response, fileName);
+        //未获取到数据时
+        if (datas.get("data") == null){
+            return;
+        }
+        ExcelWriter workbook= null;
+        BufferedOutputStream bos = new BufferedOutputStream(response.getOutputStream());
+        try{
+            String template="student_fill_template.xlsx";
+            //日期转化格式字符串
+            workbook = EasyExcel.write(bos).withTemplate(template).build();
+
+            WriteSheet sheet = EasyExcel.writerSheet("Sheet1").build();
+            FillConfig fillConfig = FillConfig.builder().forceNewRow(true).build();
+
+            //填充议题数据
+            workbook.fill(datas.get("data"),fillConfig,sheet);
+
+            //datas.remove("data");
+            //获取副标题及角标
+            HashMap<String,Object> map = new LinkedHashMap<>();
+            map.put("schoolclass",datas.get("schoolclass"));
+            map.put("exporttime",datas.get("exporttime"));
+            //填充角标及标题数据
+            workbook.fill(map,sheet);
+        }catch (Throwable ex){
+            ex.getMessage();
+        }finally {
+            bos.flush();
+            if (workbook != null){
+                workbook.finish();
+            }
+        }
+    }
+
+
 
     /**
      * 同步导入(适用于小数据量)
@@ -78,8 +136,10 @@ public class ExcelUtils {
             response.reset();
             setAttachmentResponseHeader(response, filename);
             response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8");
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+
             ServletOutputStream os = response.getOutputStream();
-            ExcelWriterBuilder writerBuilder = EasyExcel.write(os).autoCloseStream(false)
+            ExcelWriterBuilder writerBuilder = EasyExcelFactory.write(os).autoCloseStream(false)
                     //注册自定义合并单元格策略
                     .registerWriteHandler(new ExcelFillCellLineMergeHandler(1, new int[]{0,1,2}))
                     // 大数值自动转换 防止失真
@@ -238,6 +298,8 @@ public class ExcelUtils {
      * excel数据
      */
     public static class ExcelData {
+
+        Map<String,Object> map = new HashMap<>();
         private List<ShellData<?>> shellDataList = new ArrayList<>();
         private String filename = "export.xlsx";
         private String templateFilename;

@@ -5,6 +5,8 @@ import com.say.commom.core.text.StrFormatter;
 import org.springframework.util.AntPathMatcher;
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * 字符串工具类
@@ -22,15 +24,29 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      */
     private static final char SEPARATOR = '_';
 
+
+    /**
+     * 提取字符串中所有数字
+     * @param str
+     * @return
+     */
+    public static String getNullstr(String str){
+        String regEx = "[^0-9]";
+        Pattern p = Pattern.compile(regEx);
+        Matcher m = p.matcher(str);
+        return m.replaceAll("").trim();
+    }
     /**
      * 获取参数不为空值
      *
      * @param value defaultValue 要判断的value
      * @return value 返回值
      */
+
     public static <T> T nvl(T value, T defaultValue) {
         return value != null ? value : defaultValue;
     }
+
 
     /**
      * * 判断一个Collection是否为空， 包含List，Set，Queue

@@ -11,6 +11,7 @@ public class ShellData<T> {
 
 
     private List<T> list;
+
     private String sheetName;
     private Class<T> clazz;
 

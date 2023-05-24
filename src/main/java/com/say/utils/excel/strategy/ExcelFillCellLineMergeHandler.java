@@ -106,6 +106,7 @@ public class ExcelFillCellLineMergeHandler implements CellWriteHandler {
             }
             // 若上一个单元格未被合并，则新增合并单元
             if (!isMerged) {
+
                 CellRangeAddress cellRangeAddress = new CellRangeAddress(curRowIndex - 1, curRowIndex, curColIndex, curColIndex);
                 sheet.addMergedRegion(cellRangeAddress);
             }

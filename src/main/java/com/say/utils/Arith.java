@@ -2,6 +2,7 @@ package com.say.utils;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.NumberFormat;
 
 /**
  * 精确的浮点数运算
@@ -61,6 +62,23 @@ public class Arith {
     }
 
     /**
+     * 字符串小数相乘
+     * @param v1
+     * @param v2
+     * @return
+     */
+    public static double mul(String v1, String v2) {
+        BigDecimal b1 = new BigDecimal(v1);
+        BigDecimal b2 = new BigDecimal(v2);
+        return b1.multiply(b2).doubleValue();
+    }
+
+    public static void main(String[] args) {
+        double mul = mul("0.1", "0.35");
+        System.out.println(mul);
+    }
+
+    /**
      * 提供（相对）精确的除法运算，当发生除不尽的情况时，精确到
      * 小数点以后10位，以后的数字四舍五入。
      *
@@ -110,4 +128,13 @@ public class Arith {
         BigDecimal one = BigDecimal.ONE;
         return b.divide(one, scale, RoundingMode.HALF_UP).doubleValue();
     }
+
+
+    public static String getPercent(double data, int digit) {
+        NumberFormat numberFormat = NumberFormat.getPercentInstance();
+        numberFormat.setMinimumFractionDigits(digit);
+        return numberFormat.format(data);
+    }
+
+
 }
