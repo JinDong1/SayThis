@@ -19,4 +19,7 @@ public interface SysJobLogService extends IService<SysJobLog> {
      */
     public void cleanJobLog();
 
+
+
+
 }

@@ -1,37 +1,107 @@
 package com.say.controller;
 
 import com.alibaba.excel.EasyExcel;
-import com.alibaba.excel.ExcelWriter;
-import com.alibaba.excel.write.metadata.WriteSheet;
+import com.alibaba.excel.context.AnalysisContext;
+import com.alibaba.excel.event.AnalysisEventListener;
 import com.say.commom.core.R;
+import com.say.domain.Column;
+import com.say.domain.Student;
 import com.say.model.SheetModel;
 import com.say.utils.Arith;
 import com.say.utils.excel.model.ShellData;
 import com.say.utils.excel.ExcelUtils;
 import lombok.extern.log4j.Log4j2;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.math.BigDecimal;
-import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.springframework.http.RequestEntity.head;
 
 @Controller
 @RequestMapping("/excel")
 @Log4j2
 public class ExcelController {
+
+
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ExcelController.class);
+
+
+
+
+    Student student = new Student();
+
+    @PostMapping("/readExcel")
+    public  void readExcel(@RequestParam("file") MultipartFile file) throws IOException {
+
+        EasyExcel.read(file.getInputStream(), Column.class, new AnalysisEventListener<Column>() {
+            @Override
+            public void invoke(Column column, AnalysisContext analysisContext) {
+
+                Integer rowIndex = analysisContext.readRowHolder().getRowIndex();
+                if (rowIndex == 0){
+                    student.setCl(column.getTwo());
+                    student.setName(column.getFour());
+                }
+
+                if (rowIndex == 1){
+                    student.setSousl(column.getTwo());
+                    student.setAge(column.getFour());
+                }
+
+                if (rowIndex == 2){
+                    student.setDept(column.getTwo());
+                    student.setSex(column.getFour());
+                }
+
+            }
+
+            @Override
+            public void doAfterAllAnalysed(AnalysisContext analysisContext) {
+                System.out.println("学生信息：：：："+student);
+                // 数据解析完成后的操作
+            }
+        }).headRowNumber(0).sheet().doRead();
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * 导入 Excel 文件
+     *
+     * @param file Excel 文件
+     * @return
+     * @throws IOException
+     */
+    @PostMapping("/import")
+    public R importExcel(@RequestParam("file") MultipartFile file) throws IOException {
+
+        return R.success();
+    }
+
 
 
     @RequestMapping("/download")
